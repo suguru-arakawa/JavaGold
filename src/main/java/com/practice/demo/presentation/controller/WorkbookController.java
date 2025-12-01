@@ -2,7 +2,6 @@ package com.practice.demo.presentation.controller;
 
 
 import com.practice.demo.application.service.WorkbookService;
-import com.practice.demo.presentation.dto.QuestionDto;
 import com.practice.demo.presentation.dto.WorkBookRequestDto;
 import com.practice.demo.presentation.dto.WorkbookResultDto;
 import lombok.RequiredArgsConstructor;
