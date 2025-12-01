@@ -1,7 +1,7 @@
 package com.practice.demo.presentation.controller;
 
 import com.practice.demo.application.service.Chapter4Service;
-import com.practice.demo.domain.searvice.DiscountPolicy;
+import com.practice.demo.domain.service.DiscountPolicy;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

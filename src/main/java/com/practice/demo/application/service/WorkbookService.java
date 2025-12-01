@@ -1,15 +1,25 @@
 package com.practice.demo.application.service;
 
+import com.practice.demo.Infrastructure.repository.QuestionRepository;
+import com.practice.demo.domain.model.Question;
+import com.practice.demo.presentation.dto.DescriptionDto;
 import com.practice.demo.presentation.dto.QuestionDto;
 import com.practice.demo.presentation.dto.WorkBookRequestDto;
 import com.practice.demo.presentation.dto.WorkbookResultDto;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Example;
+import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.ToDoubleBiFunction;
 
 @Service
 public class WorkbookService {
+
+    @Autowired
+    private QuestionRepository questionRepository;
 
     public WorkbookResultDto getResult(WorkBookRequestDto requestDto) {
 
@@ -42,6 +52,25 @@ public class WorkbookService {
         workbookResultDto.setQuestionResultDtoList(notCorrectQuestionList);
 
         return workbookResultDto;
+    }
+
+    public List<DescriptionDto> getDescription(String chapterNumber) {
+        List<Question> questionList = questionRepository.findByChapterNumber(chapterNumber);
+        return createDescriptionDto(questionList);
+    }
+
+    /**
+     * DBから取得した問題をDTOに詰め替える
+     * @param questionList 問題のリスト
+     * @return 問題のリスト
+     */
+    private List<DescriptionDto> createDescriptionDto(List<Question> questionList) {
+        return questionList.stream().map(question -> {
+            DescriptionDto descriptionDto = new DescriptionDto();
+            descriptionDto.setDescription(question.getDescription());
+            descriptionDto.setExplanation(question.getExplanation());
+            return descriptionDto;
+        }).toList();
     }
 
     /**

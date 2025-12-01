@@ -1,4 +1,4 @@
-package com.practice.demo.domain.searvice;
+package com.practice.demo.domain.service;
 
 @FunctionalInterface
 public interface DiscountPolicy {

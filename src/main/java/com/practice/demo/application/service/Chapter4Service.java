@@ -2,7 +2,7 @@ package com.practice.demo.application.service;
 
 import com.practice.demo.domain.model.Gen;
 import com.practice.demo.domain.model.ListItem;
-import com.practice.demo.domain.searvice.DiscountPolicy;
+import com.practice.demo.domain.service.DiscountPolicy;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
