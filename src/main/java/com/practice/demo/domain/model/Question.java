@@ -27,6 +27,21 @@ public class Question {
     @Column(name = "explanation", columnDefinition = "TEXT")
     private String explanation;
 
+    @Column(name = "choice_1", columnDefinition = "TEXT")
+    private String choice1;
+
+    @Column(name = "choice_2", columnDefinition = "TEXT")
+    private String choice2;
+
+    @Column(name = "choice_3", columnDefinition = "TEXT")
+    private String choice3;
+
+    @Column(name = "choice_4", columnDefinition = "TEXT")
+    private String choice4;
+
+    @Column(name = "correctAnswer")
+    private String correctAnswer;
+
     @Column(name = "created_at", updatable = false)
     private LocalDateTime createdAt;
 

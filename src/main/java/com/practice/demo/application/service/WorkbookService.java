@@ -7,13 +7,12 @@ import com.practice.demo.presentation.dto.QuestionDto;
 import com.practice.demo.presentation.dto.WorkBookRequestDto;
 import com.practice.demo.presentation.dto.WorkbookResultDto;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Example;
-import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.ToDoubleBiFunction;
+
+import static com.practice.demo.domain.type.QuestionNumber.*;
 
 @Service
 public class WorkbookService {
@@ -65,12 +64,24 @@ public class WorkbookService {
      * @return 問題のリスト
      */
     private List<DescriptionDto> createDescriptionDto(List<Question> questionList) {
+
         return questionList.stream().map(question -> {
             DescriptionDto descriptionDto = new DescriptionDto();
             descriptionDto.setDescription(question.getDescription());
             descriptionDto.setExplanation(question.getExplanation());
+            descriptionDto.setAnswerChoices(createChoiceList(question));
+            descriptionDto.setCorrectAnswerLabel(question.getCorrectAnswer());
             return descriptionDto;
         }).toList();
+    }
+
+    private List<DescriptionDto.AnswerChoice> createChoiceList(Question question){
+        return List.of(
+                new DescriptionDto.AnswerChoice(QUESTION_NUMBER_A.getCode(), question.getChoice1()),
+                new DescriptionDto.AnswerChoice(QUESTION_NUMBER_B.getCode(), question.getChoice2()),
+                new DescriptionDto.AnswerChoice(QUESTION_NUMBER_C.getCode(), question.getChoice3()),
+                new DescriptionDto.AnswerChoice(QUESTION_NUMBER_D.getCode(), question.getChoice4())
+        );
     }
 
     /**
