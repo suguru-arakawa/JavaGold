@@ -1,11 +1,14 @@
 INSERT INTO public.questions
-(chapter_number, description, explanation, choice_1, choice_2, choice_3, choice_4, correct_answer)
+(chapter_number, description, explanation, choice_1, choice_2, choice_3, choice_4, correct_answer, question_number)
 VALUES
-(1, '次の問題のうち、正しいものを選びなさい。（２つ選択）', '未定',
- 'インナークラスはprivateで修飾できない', 'staticなインナークラスはpublicで修飾できない',
- 'ローカルクラスはpublicで修飾できない', '匿名クラスはfinalで修飾できない', 'CD'),
+('1', '次の問題のうち、正しいものを選びなさい。（２つ選択）', '未定',
+ 'インナークラスはprivateで修飾できない',
+ 'staticなインナークラスはpublicで修飾できない',
+ 'ローカルクラスはpublicで修飾できない',
+ '匿名クラスはfinalで修飾できない',
+ 'CD', 1),
 
-(1, '次のプログラムの「// insert code here」に記述するコードとして、正しいものを選びなさい（１つ選択）
+('1', '次のプログラムの「// insert code here」に記述するコードとして、正しいものを選びなさい（１つ選択）
 
 public class Outer {
     class Inner {
@@ -18,18 +21,26 @@ public class Outer {
         // insert code here
     }
 }', '未定',
- 'new Inner();', 'new Outer.Inner();', 'new Outer().new Inner();', 'new Outer:Inner();', 'C'),
+ 'new Inner();',
+ 'new Outer.Inner();',
+ 'new Outer().new Inner();',
+ 'new Outer:Inner();',
+ 'C', 2),
 
-(1, '次のクラスをインスタンス化するためのコードとして、正しいものを選びなさい（１つ選択）
+('1', '次のクラスをインスタンス化するためのコードとして、正しいものを選びなさい（１つ選択）
 
 public class Outer {
     public static class Inner {
         // do something
     }
 }', '未定',
- 'Inner inner = new Inner();', 'Inner inner = new Outer().new Inner();', 'Inner inner = Outer.new Inner();', 'Inner inner = new Outer.Inner();', 'A'),
+ 'Inner inner = new Inner();',
+ 'Inner inner = new Outer().new Inner();',
+ 'Inner inner = Outer.new Inner();',
+ 'Inner inner = new Outer.Inner();',
+ 'A', 3),
 
-(1, '次のプログラムをコンパイル、実行した時の結果として、正しいものとして選びなさい（１つ選択）
+('1', '次のプログラムをコンパイル、実行した時の結果として、正しいものを選びなさい（１つ選択）
 
 public class Outer {
     private int num = 2;
@@ -46,9 +57,13 @@ public class Outer {
         }
     }
 }', '未定',
- '５行目でコンパイルエラーが発生する', '１１行目でコンパイルエラーが発生する', '「200」と表示される', '実行時に例外がスローされる', 'B'),
+ '５行目でコンパイルエラーが発生する',
+ '１１行目でコンパイルエラーが発生する',
+ '「200」と表示される',
+ '実行時に例外がスローされる',
+ 'B', 4),
 
-(1, '次のプログラムをコンパイル、実行した時の結果として、正しいものを選びなさい（１つ選択）
+('1', '次のプログラムをコンパイル、実行した時の結果として、正しいものを選びなさい（１つ選択）
 
 public class Outer {
 
@@ -68,9 +83,13 @@ public class Outer {
         outer.new Inner().test();
     }
 }', '未定',
- '「null」と表示される', '「Hello Java」と表示される', 'コンパイルエラーが発生する', '実行時に例外がスローされる', 'C'),
+ '「null」と表示される',
+ '「Hello Java」と表示される',
+ 'コンパイルエラーが発生する',
+ '実行時に例外がスローされる',
+ 'C', 5),
 
-(1, '次のプログラムをコンパイル、実行した時の結果として、正しいものを選びなさい（１つ選択）
+('1', '次のプログラムをコンパイル、実行した時の結果として、正しいものを選びなさい（１つ選択）
 
 public interface Test {
     void execute();
@@ -89,7 +108,7 @@ public class Sample() {
             }
         }
         value = "LocalClass";
-        message = "Hello, ";
+        message = "Hello, "
         return new A();
     }
 }
@@ -101,9 +120,13 @@ public class Main {
             .execute();
     }
 }', '未定',
- '「Hello, LocalClass」と表示される', '「Hello, Java」と表示される', 'コンパイルエラーが発生する', '実行時に例外がスローされる', 'C'),
+ '「Hello, LocalClass」と表示される',
+ '「Hello, Java」と表示されれる',
+ 'コンパイルエラーが発生する',
+ '実行時に例外がスローされる',
+ 'C', 6),
 
-(1, '次のプログラムをコンパイル、実行した時の結果として、正しいものを選びなさい（１つ選択）
+('1', '次のプログラムをコンパイル、実行した時の結果として、正しいものを選びなさい（１つ選択）
 
 public class Sample() {
 
@@ -134,9 +157,13 @@ public class Main {
         System.out.println(sample.getNum());
     }
 }', '未定',
- '「10」と表示される', '「100」と表示される', 'コンパイルエラーが発生する', '実行時に例外がスローされる', 'B'),
+ '「10」と表示される',
+ '「100」と表示される',
+ 'コンパイルエラーが発生する',
+ '実行時に例外がスローされる',
+ 'B', 7),
 
-(1, '次のプログラムをコンパイル、実行した時の結果として、正しいものを選びなさい（１つ選択）
+('1', '次のプログラムをコンパイル、実行した時の結果として、正しいものを選びなさい（１つ選択）
 
 public class Sample() {
 
@@ -153,10 +180,15 @@ public class Main {
                 System.out.println("B");
             }
         }
+    }
 }', '未定',
- '「A」と表示される', '「B」と表示される', 'コンパイルエラーが発生する', '実行時に例外がスローされる', 'C'),
+ '「A」と表示される',
+ '「B」と表示される',
+ 'コンパイルエラーが発生する',
+ '実行時に例外がスローされる',
+ 'C', 8),
 
-(1, '次のプログラムの説明として、正しいものを選びなさい（３つ選択）
+('1', '次のプログラムの説明として、正しいものを選びなさい（３つ選択）
 
 public interfase A {
     static void test() {
@@ -176,10 +208,13 @@ public interface D implements A {
         test();
     }
 }', '未定',
- 'Dクラスの3行目でコンパイルエラーが発生する', 'Dクラスの4行目でコンパイルエラーが発生する',
- 'Dクラスの5行目でコンパイルエラーが発生する', 'Dクラスの6行目でコンパイルエラーが発生する', 'BCD'),
+ 'Dクラスの3行目でコンパイルエラーが発生する',
+ 'Dクラスの4行目でコンパイルエラーが発生する',
+ 'Dクラスの5行目でコンパイルエラーが発生する',
+ 'Dクラスの6行目でコンパイルエラーが発生する',
+ 'BCD', 9),
 
-(1, '次のプログラムをコンパイル、実行した時の結果として、正しいものを選びなさい（１つ選択）
+('1', '次のプログラムをコンパイル、実行した時の結果として、正しいものを選びなさい（１つ選択）
 
 public interfase Sample {
     static void test() {
@@ -197,9 +232,13 @@ public interface SampleIml implements Sample {
      }
 
 }', '未定',
- '「A」と表示される', '「B」と表示される', 'コンパイルエラーが発生する', '実行時に例外がスローされる', 'A'),
+ '「A」と表示される',
+ '「B」と表示される',
+ 'コンパイルエラーが発生する',
+ '実行時に例外がスローされる',
+ 'A', 10),
 
-(1, '次のプログラムの「// insert code here」に記述するコードとして、正しいものを選びなさい（１つ選択）
+('1', '次のプログラムの「// insert code here」に記述するコードとして、正しいものを選びなさい（１つ選択）
 
 public interfase A {
     default void test() {
@@ -224,9 +263,13 @@ public class Sample implements A, D {
         // insert code here
     }
 }', '未定',
- 'A.super.test();', 'B.super.test();', 'C.super.test();', '上記の選択肢はいずれもコンパイルエラーとなる', 'A'),
+ 'A.super.test();',
+ 'B.super.test();',
+ 'C.super.test();',
+ '上記の選択肢はいずれもコンパイルエラーとなる',
+ 'A', 11),
 
-(1, '次のプログラムをコンパイル、実行した時の結果として、正しいものを選びなさい（１つ選択）
+('1', '次のプログラムをコンパイル、実行した時の結果として、正しいものを選びなさい（１つ選択）
 
 public interfase A {
     default void test() {
@@ -250,9 +293,13 @@ public class Main {
         a.test();
     }
 }', '未定',
- '「A」と表示される', '「B」と表示される', 'コンパイルエラーが発生する', '実行時に例外がスローされる', 'B'),
+ '「A」と表示される',
+ '「B」と表示される',
+ 'コンパイルエラーが発生する',
+ '実行時に例外がスローされる',
+ 'B', 12),
 
-(1, '次のプログラムをコンパイル、実行した時の結果として、正しいものを選びなさい（１つ選択）
+('1', '次のプログラムをコンパイル、実行した時の結果として、正しいものを選びなさい（１つ選択）
 
 public interfase A {
     default void test() {
@@ -271,22 +318,26 @@ public class Sample extends B implements A {
         new Sample().test();
     }
 }', '未定',
- '「A」と表示される', '「B」と表示される', 'コンパイルエラーが発生する', '実行時に例外がスローされる', 'C'),
+ '「A」と表示される',
+ '「B」と表示される',
+ 'コンパイルエラーが発生する',
+ '実行時に例外がスローされる',
+ 'C', 13),
 
-(1, '次のプログラムの「// insert code here」に記述するコードとして、正しいものを選びなさい（１つ選択）
+('1', '次のプログラムの「// insert code here」に記述するコードとして、正しいものを選びなさい（１つ選択）
 
 public interfase Sample {
     default void test() {
        // insert code here
     }
 }', '未定',
- 'private void a();', 'private void b() {
-    // do something
-}', 'private default void c() {
-    // do something
-}', '上記の選択肢はいずれもコンパイルエラーとなる', 'B'),
+ 'private void a();',
+ 'private void b() {\n    // do something\n}',
+ 'private default void c() {\n    // do something\n}',
+ '上記の選択肢はいずれもコンパイルエラーとなる',
+ 'B', 14),
 
-(1, '次のプログラムをコンパイルし、実行結果に「A」と表示したい、「// insert code here」に記述するコードとして、正しいものを選びなさい（１つ選択）
+('1', '次のプログラムをコンパイルし、実行結果に「A」と表示したい、「// insert code here」に記述するコードとして、正しいものを選びなさい（１つ選択）
 
 public enum Test {
     A,B,C
@@ -297,9 +348,13 @@ public class Main() {
         // insert code here
     }
 }', '未定',
- 'System.out.println(Test.values()[0]);', 'System.out.println(Test.values());', 'System.out.println(Test.values()[1]);', 'System.out.println(Test.valueOf()[1]);', 'A'),
+ 'System.out.println(Test.values()[0]);',
+ 'System.out.println(Test.values());',
+ 'System.out.println(Test.values()[1]);',
+ 'System.out.println(Test.valueOf()[1]);',
+ 'A', 15),
 
-(1, '次のプログラムをコンパイル、実行した時の結果として、正しいものを選びなさい（１つ選択）
+('1', '次のプログラムをコンパイル、実行した時の結果として、正しいものを選びなさい（１つ選択）
 
 public enum Sample {
 
@@ -323,4 +378,8 @@ public class Main() {
         System.out.println(Sample.A);
     }
 }', '未定',
- '「A」と表示される', '「hello」が1回表示される', '「hello」が3回表示される', '「hello」が4回表示される', 'D');
+ '「A」と表示される',
+ '「hello」が1回表示される',
+ '「hello」が3回表示される',
+ '「hello」が4回表示される',
+ 'D', 16);

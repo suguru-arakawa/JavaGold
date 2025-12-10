@@ -1,7 +1,6 @@
 package com.practice.demo.domain.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -10,7 +9,6 @@ import java.time.LocalDateTime;
 @Entity
 @Data
 @Table(name = "questions")
-@AllArgsConstructor
 @NoArgsConstructor
 public class Question {
 
@@ -39,8 +37,11 @@ public class Question {
     @Column(name = "choice_4", columnDefinition = "TEXT")
     private String choice4;
 
-    @Column(name = "correctAnswer")
+    @Column(name = "correct_answer")
     private String correctAnswer;
+
+    @Column(name = "question_number")
+    private Integer questionNumber;
 
     @Column(name = "created_at", updatable = false)
     private LocalDateTime createdAt;

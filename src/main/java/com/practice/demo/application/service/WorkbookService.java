@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 import static com.practice.demo.domain.type.QuestionNumber.*;
@@ -55,6 +56,9 @@ public class WorkbookService {
 
     public List<DescriptionDto> getDescription(String chapterNumber) {
         List<Question> questionList = questionRepository.findByChapterNumber(chapterNumber);
+
+        // TODO::ランダム出題のときソートでなくす。
+        questionList.sort(Comparator.comparing(Question::getQuestionNumber));
         return createDescriptionDto(questionList);
     }
 
